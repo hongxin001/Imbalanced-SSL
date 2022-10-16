@@ -1,6 +1,6 @@
 from torch import nn
 from .resnet_cifar import ResNet18, ResNet34, ResNet50, ResNet101, ResNet152
-
+from .resnet_new import resnet32
 
 class projection_MLP(nn.Module):
     def __init__(self, in_dim, out_dim, num_layers=2):
@@ -112,6 +112,7 @@ class SimSiameval(nn.Module):
     @staticmethod
     def get_backbone(backbone_name):
         return {'resnet18': ResNet18(),
+                'resnet32': resnet32(),
                 'resnet34': ResNet34(),
                 'resnet50': ResNet50(),
                 'resnet101': ResNet101(),
