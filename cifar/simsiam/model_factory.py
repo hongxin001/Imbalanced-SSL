@@ -76,6 +76,7 @@ class SimSiam(nn.Module):
     @staticmethod
     def get_backbone(backbone_name):
         return {'resnet18': ResNet18(),
+                'resnet32': resnet32(),
                 'resnet34': ResNet34(),
                 'resnet50': ResNet50(),
                 'resnet101': ResNet101(),
